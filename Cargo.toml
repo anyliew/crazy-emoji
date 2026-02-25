@@ -1,12 +1,12 @@
 [package]
-name = "nsfw-emoji"
-description = "nsfw-emoji"
-version = "0.0.5"
+name = "crazy-emoji"
+description = "crazy-emoji"
+version = "0.0.6"
 authors = ["Anyliew <anyliew@outlook.com>"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/anyliew/nsfw-emoji-rs"
-repository = "https://github.com/anyliew/nsfw-emoji-rs"
+homepage = "https://github.com/anyliew/crazy-emoji"
+repository = "https://github.com/anyliew/crazy-emoji"
 edition = "2024"
 
 [lib]
