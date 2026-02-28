@@ -1,7 +1,7 @@
 <div align="center">
 <img src="./docs/picture/logo.png" width=200 />
 
-# nsfw-emoji-rs
+# crazy-emoji
 
 <p align="center">
   <img src="https://img.shields.io/github/license/MemeCrafters/meme-generator-rs" alt="license">
@@ -15,11 +15,11 @@
 </p>
 </div>
 
-## nsfw-emoji-rs 表情包扩展仓库 
+## crazy-emoji 表情包扩展仓库 
 
 *🚀* 基于 [meme-generator-rs](https://github.com/MemeCrafters/meme-generator-rs) 做的表情包扩展仓库~
 
-*✨* 为你的聊天机器人添加更多趣味表情生成！
+*✨* 为你的聊天机器人添加更多逆天表情生成！
 
 > [!WARNING]
 >
@@ -39,16 +39,16 @@
 
 #### 😉 名称排序  A-Z
 
-* [表情列表](https://github.com/anyliew/nsfw-emoji-rs/wiki/%E8%A1%A8%E6%83%85%E5%88%97%E8%A1%A8)
+* [表情列表](https://github.com/anyliew/crazy-emoji/wiki/%E8%A1%A8%E6%83%85%E5%88%97%E8%A1%A8)
 
 
 
 
 ## 💐 鸣谢
 
-感谢以下开发者对 nsfw-emoji-rs 仓库作出的贡献
+感谢以下开发者对 crazy-emoji 仓库作出的贡献
 
-<a href="https://github.com/anyliew/nsfw-emoji-rs/graphs/contributors">
+<a href="https://github.com/anyliew/crazy-emoji/graphs/contributors">
   <img src="./docs/picture/partner.jpg" />
 </a>
 
@@ -56,7 +56,7 @@
 
 ### 🤔 issues
 
-> issues https://github.com/anyliew/nsfw-emoji-rs/issues 
+> issues https://github.com/anyliew/crazy-emoji/issues 
 
 单个表情有问题反馈请附带日志和截图
 答复受限网络没那么快及时处理
@@ -84,3 +84,13 @@
 ### wiki 文档
 - [meme-generator-rs wiki](https://github.com/MemeCrafters/meme-generator-rs/wiki)
 
+## ⭐ 支持本项目
+
+如果你觉得本项目对你有帮助，请给本项目点一个star⭐
+
+
+## 💬 免责声明
+
+- 本项目仅供学习和交流使用，禁止用于任何商业用途及违法用途。
+
+- 项目中的图片等资源均来自互联网，如有侵权请及时联系开发者，我们会尽快处理删除相关内容。
