@@ -20,7 +20,7 @@ fn moistening_water(images: Vec<InputImage>, _: Vec<String>, _: NoOptions) -> Re
         
         let img = images[0]
             .resize_fit((165, 125), Fit::Cover)
-            .rotate(25, None);
+            .rotate(25.0);
         
         canvas.draw_image(&img, (485, 290), None);
         canvas.draw_image(&frame, (0, 0), None);
