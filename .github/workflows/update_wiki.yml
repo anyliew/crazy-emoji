@@ -88,7 +88,7 @@ jobs:
           # 创建库文件目录
           mkdir libraries
           # 复制构建好的 Rust 库文件
-          cp target/release/libnsfw_emoji.so libraries/
+          cp target/release/libcrazy_emoji_emoji.so libraries/
           # 复制字体资源文件
           cp -r main/resources/fonts resources/
           # 创建配置文件，设置只加载外部表情包
