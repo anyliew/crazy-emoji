@@ -1,5 +1,4 @@
-<div align="center">
-<img src="./docs/picture/logo.png" width=200 />
+![crazy-emoji](https://socialify.git.ci/anyliew/crazy-emoji/image?description=1&forks=1&issues=1&language=1&logo=https%3A%2F%2Fgithub.com%2Fanyliew%2Fcrazy-emoji%2Fraw%2Fmain%2Fdocs%2Fpicture%2Flogo.png&name=1&owner=1&pulls=1&stargazers=1&theme=Light)
 
 # crazy-emoji
 
@@ -9,9 +8,6 @@
   <a href="https://pypi.org/project/meme-generator-rs">
   <a href="https://crates.io/crates/meme_generator">
     <img src="https://img.shields.io/crates/v/meme_generator">
-    <img src="https://badgen.net/pypi/v/meme-generator-rs" alt="pypi">
-  <a href="https://qm.qq.com/q/KZFZGdWmyG">
-    <img src="https://img.shields.io/badge/QQ%E7%BE%A4-660451080-orange" alt="qq group">
 </p>
 </div>
 
@@ -41,17 +37,6 @@
 
 * [表情列表](https://github.com/anyliew/crazy-emoji/wiki/%E8%A1%A8%E6%83%85%E5%88%97%E8%A1%A8)
 
-
-
-
-## 💐 鸣谢
-
-感谢以下开发者对 crazy-emoji 仓库作出的贡献
-
-<a href="https://github.com/anyliew/crazy-emoji/graphs/contributors">
-  <img src="./docs/picture/partner.jpg" />
-</a>
-
 ## 📝 反馈
 
 ### 🤔 issues
@@ -60,14 +45,6 @@
 
 单个表情有问题反馈请附带日志和截图
 答复受限网络没那么快及时处理
-
-### 🐧QQ Group
-
-* [进群注意事项](https://github.com/anyliew/meme_emoji/wiki/qq_group)
-
-<a href="https://qm.qq.com/q/KZFZGdWmyG">
-  <img src="./docs/picture/qq_group.jpg" />
-</a>
 
 
 ## 🥳 投稿
