@@ -19,7 +19,7 @@ fn oral_sex(images: Vec<InputImage>, _: Vec<String>, _: NoOptions) -> Result<Vec
         let self_head = images[0]
             .resize_fit((58, 58), Fit::Cover)
             .circle()
-            .rotate(-15.0);
+            .rotate_crop(-15.0);
         let user_head = images[1].resize_fit((48, 48), Fit::Cover).circle();
         let mut surface = new_surface(template.dimensions());
         let canvas = surface.canvas();

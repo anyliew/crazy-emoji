@@ -12,10 +12,10 @@ use meme_generator_utils::{
 
 use crate::{options::NoOptions, register_meme};
 
-fn fleshlight_taimanin_asgi(images: Vec<InputImage>, _: Vec<String>, _: NoOptions) -> Result<Vec<u8>, Error> {
+fn fleshlight_taimanin_asgi(images: Vec<InputImage>, texts: Vec<String>, _: NoOptions) -> Result<Vec<u8>, Error> {
     let frame = load_image("fleshlight_taimanin_asgi/0.png")?;
     
-    let name = &images[0].name;
+    let name = texts.first().unwrap_or(&images[0].name);
     
     let text = format!("{name}の❤️最愛");
 
@@ -56,6 +56,8 @@ register_meme!(
     fleshlight_taimanin_asgi,
     min_images = 1,
     max_images = 1,
+    min_texts = 0,
+    max_texts = 1,
 
     keywords = &["对魔忍"],
     date_created = local_date(2024, 12, 21),

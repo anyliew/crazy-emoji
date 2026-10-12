@@ -41,7 +41,7 @@ fn behind_do(images: Vec<InputImage>, _: Vec<String>, _: NoOptions) -> Result<Ve
         let self_head = images[0]
             .resize_fit((110, 110), Fit::Cover)
             .circle()
-            .rotate(-15.0);
+            .rotate_crop(-15.0);
         let user_head = images[1].resize_fit((116, 116), Fit::Cover).circle();
         let mut surface = new_surface(frame.dimensions());
         let canvas = surface.canvas();

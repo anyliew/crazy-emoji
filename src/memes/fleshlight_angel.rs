@@ -12,8 +12,8 @@ use meme_generator_utils::{
 
 use crate::{options::NoOptions, register_meme};
 
-fn fleshlight_angel(images: Vec<InputImage>, _: Vec<String>, _: NoOptions) -> Result<Vec<u8>, Error> {
-    let name = &images[0].name;
+fn fleshlight_angel(images: Vec<InputImage>, texts: Vec<String>, _: NoOptions) -> Result<Vec<u8>, Error> {
+    let name = texts.first().unwrap_or(&images[0].name);
     let text = format!("{name}の❤️最愛");
     let frame = load_image("fleshlight_angel/0.png")?;
 
@@ -23,7 +23,7 @@ fn fleshlight_angel(images: Vec<InputImage>, _: Vec<String>, _: NoOptions) -> Re
         let canvas = surface.canvas();
         
         // 先绘制用户图片作为最底层
-        let img = images[0].resize_bound((675, 675), Fit::Cover);
+        let img = images[0].resize_fit((675, 675), Fit::Cover).circle();
         canvas.draw_image(&img, (65, 105), None);
         
         // 然后绘制frame作为中层（覆盖在用户图片之上）
@@ -53,6 +53,8 @@ register_meme!(
     fleshlight_angel,
     min_images = 1,
     max_images = 1,
+    min_texts = 0,
+    max_texts = 1,
     keywords = &["天使心"],
     date_created = local_date(2025, 3, 24),
     date_modified = local_date(2026, 10, 12),

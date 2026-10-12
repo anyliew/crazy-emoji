@@ -28,7 +28,7 @@ fn nailoong_do(images: Vec<InputImage>, _: Vec<String>, _: NoOptions) -> Result<
 
     let func = |i: usize, images: Vec<Image>| {
         let frame = load_image(format!("nailoong_do/{i}.png"))?;
-        let user_head = images[0].resize_exact(sizes[i]).rotate(45.0);
+        let user_head = images[0].resize_exact(sizes[i]).rotate_crop(45.0);
         let mut surface = new_surface(frame.dimensions());
         let canvas = surface.canvas();
         canvas.draw_image(&user_head, positions[i], None);

@@ -12,8 +12,8 @@ use meme_generator_utils::{
 
 use crate::{options::NoOptions, register_meme};
 
-fn fleshlight_cleaning_liquid(images: Vec<InputImage>, _: Vec<String>, _: NoOptions) -> Result<Vec<u8>, Error> {
-    let name = &images[0].name;
+fn fleshlight_cleaning_liquid(images: Vec<InputImage>, texts: Vec<String>, _: NoOptions) -> Result<Vec<u8>, Error> {
+    let name = texts.first().unwrap_or(&images[0].name);
     let text = format!("{name}の❤️最爱");
     let frame = load_image("fleshlight_cleaning_liquid/0.png")?;
 
@@ -23,7 +23,7 @@ fn fleshlight_cleaning_liquid(images: Vec<InputImage>, _: Vec<String>, _: NoOpti
         let canvas = surface.canvas();
         
         // 先绘制用户图片作为最底层
-        let img = images[0].resize_bound((920, 920), Fit::Cover);
+        let img = images[0].resize_fit((920, 920), Fit::Cover).circle();
         canvas.draw_image(&img, (290, 20), None);
         
         // 然后绘制frame作为中层（覆盖在用户图片之上）
@@ -53,6 +53,8 @@ register_meme!(
     fleshlight_cleaning_liquid,
     min_images = 1,
     max_images = 1,
+    min_texts = 0,
+    max_texts = 1,
     keywords = &["清洗液"],
     date_created = local_date(2025, 3, 13),
     date_modified = local_date(2026, 10, 12),

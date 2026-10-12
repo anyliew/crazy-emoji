@@ -12,10 +12,10 @@ use meme_generator_utils::{
 
 use crate::{options::NoOptions, register_meme};
 
-fn fleshlight_mengxin_packs(images: Vec<InputImage>, _: Vec<String>, _: NoOptions) -> Result<Vec<u8>, Error> {
+fn fleshlight_mengxin_packs(images: Vec<InputImage>, texts: Vec<String>, _: NoOptions) -> Result<Vec<u8>, Error> {
     let frame = load_image("fleshlight_mengxin_packs/0.png")?;
     
-    let name = &images[0].name;
+    let name = texts.first().unwrap_or(&images[0].name);
     
     let text = format!("{name}喜爱的萌新礼包");
 
@@ -56,6 +56,8 @@ register_meme!(
     fleshlight_mengxin_packs,
     min_images = 1,
     max_images = 1,
+    min_texts = 0,
+    max_texts = 1,
 
     keywords = &["萌新礼包"],
     date_created = local_date(2025, 6, 1),

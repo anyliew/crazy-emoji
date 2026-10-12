@@ -12,10 +12,10 @@ use meme_generator_utils::{
 
 use crate::{options::NoOptions, register_meme};
 
-fn fleshlight_idol_heartbeat(images: Vec<InputImage>, _: Vec<String>, _: NoOptions) -> Result<Vec<u8>, Error> {
+fn fleshlight_idol_heartbeat(images: Vec<InputImage>, texts: Vec<String>, _: NoOptions) -> Result<Vec<u8>, Error> {
     let frame = load_image("fleshlight_idol_heartbeat/0.png")?;
     
-    let name = &images[0].name;
+    let name = texts.first().unwrap_or(&images[0].name);
     
     let text = format!("{name}の❤️最爱");
 
@@ -56,6 +56,8 @@ register_meme!(
     fleshlight_idol_heartbeat,
     min_images = 1,
     max_images = 1,
+    min_texts = 0,
+    max_texts = 1,
 
     keywords = &["偶像心跳"],
     date_created = local_date(2024, 12, 21),

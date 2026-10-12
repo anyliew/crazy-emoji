@@ -12,10 +12,10 @@ use meme_generator_utils::{
 
 use crate::{options::NoOptions, register_meme};
 
-fn fleshlight_jissbon(images: Vec<InputImage>, _: Vec<String>, _: NoOptions) -> Result<Vec<u8>, Error> {
+fn fleshlight_jissbon(images: Vec<InputImage>, texts: Vec<String>, _: NoOptions) -> Result<Vec<u8>, Error> {
     let frame = load_image("fleshlight_jissbon/0.png")?;
     
-    let name = &images[0].name;
+    let name = texts.first().unwrap_or(&images[0].name);
     
     let text = format!("{name}の深情❤️推荐");
 
@@ -27,10 +27,8 @@ fn fleshlight_jissbon(images: Vec<InputImage>, _: Vec<String>, _: NoOptions) -> 
         let img = images[0]
             .resize_fit((180, 180), Fit::Cover)
             .circle();
-        canvas.draw_image(&img, (475, 180), None);
-        
-        // 绘制frame
         canvas.draw_image(&frame, (0, 0), None);
+        canvas.draw_image(&img, (475, 180), None);
         
         // 绘制文字
         canvas.draw_text_area_auto_font_size(
@@ -56,6 +54,8 @@ register_meme!(
     fleshlight_jissbon,
     min_images = 1,
     max_images = 1,
+    min_texts = 0,
+    max_texts = 1,
 
     keywords = &["杰士邦"],
     date_created = local_date(2024, 12, 21),
