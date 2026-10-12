@@ -59,5 +59,5 @@ register_meme!(
 
     keywords = &["机械龙女", "机械龙女EVA", "机械龙女eva"],
     date_created = local_date(2024, 12, 21),
-    date_modified = local_date(2024, 12, 21),
+    date_modified = local_date(2026, 10, 12),
 );

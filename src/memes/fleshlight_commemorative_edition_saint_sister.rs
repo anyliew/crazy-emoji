@@ -18,7 +18,7 @@ fn fleshlight_commemorative_edition_saint_sister(images: Vec<InputImage>, _: Vec
     let name = &images[0].name;
     // 移除user_info部分，只保留基本功能
     
-    let text = format!("{name}の❤️最爱");
+    let text = format!("{name}の❤️最愛");
 
     let func = |images: Vec<Image>| {
         let mut surface = frame.to_surface();
@@ -60,5 +60,5 @@ register_meme!(
 
     keywords = &["纪念版圣修女"],
     date_created = local_date(2024, 12, 21),
-    date_modified = local_date(2024, 12, 21),
+    date_modified = local_date(2026, 10, 12),
 );

@@ -59,5 +59,5 @@ register_meme!(
 
     keywords = &["萌新礼包"],
     date_created = local_date(2025, 6, 1),
-    date_modified = local_date(2025, 6, 1),
+    date_modified = local_date(2026, 10, 12),
 );

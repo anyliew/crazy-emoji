@@ -59,5 +59,5 @@ register_meme!(
 
     keywords = &["纯洁臀"],
     date_created = local_date(2025, 3, 13),
-    date_modified = local_date(2025, 9, 5),
+    date_modified = local_date(2026, 10, 12),
 );

@@ -38,5 +38,5 @@ register_meme!(
     max_images = 1,
     keywords = &["滋水"],
     date_created = local_date(2025, 12, 19),
-    date_modified = local_date(2025, 12, 19),
+    date_modified = local_date(2026, 10, 12),
 );

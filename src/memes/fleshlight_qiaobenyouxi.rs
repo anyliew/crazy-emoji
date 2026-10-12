@@ -59,5 +59,5 @@ register_meme!(
 
     keywords = &["桥本友希"],
     date_created = local_date(2025, 5, 30),
-    date_modified = local_date(2025, 5, 30),
+    date_modified = local_date(2026, 10, 12),
 );

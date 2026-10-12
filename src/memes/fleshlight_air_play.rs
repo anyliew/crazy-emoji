@@ -14,7 +14,7 @@ use crate::{options::NoOptions, register_meme};
 
 fn fleshlight_air_play(images: Vec<InputImage>, _: Vec<String>, _: NoOptions) -> Result<Vec<u8>, Error> {
     let name = &images[0].name;
-    let text = format!("{name}の❤️最爱");
+    let text = format!("{name}の❤️最愛");
     let frame = load_image("fleshlight_air_play/0.png")?;
 
     let func = |images: Vec<Image>| {
@@ -54,6 +54,6 @@ register_meme!(
     min_images = 1,
     max_images = 1,
     keywords = &["空气玩法"],
-    date_created = local_date(2025, 10, 6),
-    date_modified = local_date(2025, 10, 6),
+    date_created = local_date(2025, 3, 24),
+    date_modified = local_date(2026, 10, 12),
 );

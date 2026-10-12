@@ -58,5 +58,5 @@ register_meme!(
 
     keywords = &["白丝壁女"],
     date_created = local_date(2025, 7, 20),
-    date_modified = local_date(2025, 7, 20),
+    date_modified = local_date(2026, 10, 12),
 );

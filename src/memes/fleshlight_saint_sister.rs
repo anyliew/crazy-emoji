@@ -59,5 +59,5 @@ register_meme!(
 
     keywords = &["圣修女"],
     date_created = local_date(2024, 12, 21),
-    date_modified = local_date(2024, 12, 21),
+    date_modified = local_date(2026, 10, 12),
 );

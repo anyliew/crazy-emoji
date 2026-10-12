@@ -13,7 +13,7 @@ use meme_generator_utils::{
 
 use crate::{options::number_option, register_meme};
 
-number_option!(Number, 1, 25);
+number_option!(Number, 0, 25);
 
 fn fleshlight_random(
     images: Vec<InputImage>,
@@ -21,10 +21,13 @@ fn fleshlight_random(
     options: Number,
 ) -> Result<Vec<u8>, Error> {
     let total_num = 25;
-    let num = options
-        .number
-        .unwrap_or(rand::rng().random_range(1..=total_num));
-    let bg = (num - 1) as usize;
+    // 0 或未指定表示随机
+    let num = match options.number {
+        Some(n) if n >= 1 => n,
+        _ => rand::rng().random_range(1..=total_num),
+    };
+    let bg = num as usize; // 图片文件名 1~25
+    let idx = bg - 1; // 数组索引 0~24
 
     let name = if !texts.is_empty() {
         texts[0].clone()
@@ -36,7 +39,6 @@ fn fleshlight_random(
     let text = format!("{name}の❤️最爱");
 
     let text_positions = [
-        (305, 1, 800, 133),
         (533, 39, 779, 140),
         (13, 1039, 430, 1189),
         (40, 110, 374, 207),
@@ -61,11 +63,11 @@ fn fleshlight_random(
         (35, 111, 428, 210),
         (35, 111, 428, 210),
         (22, 638, 739, 737),
+        (305, 1, 800, 133),
     ];
     let text_colors = [
         Color::WHITE,
         Color::WHITE,
-        Color::WHITE,
         Color::BLACK,
         Color::WHITE,
         Color::BLACK,
@@ -88,9 +90,9 @@ fn fleshlight_random(
         Color::WHITE,
         Color::BLACK,
         Color::BLACK,
+        Color::WHITE,
     ];
     let avatar_positions = [
-        (252, 133),
         (65, 105),
         (290, 20),
         (202, 252),
@@ -115,9 +117,9 @@ fn fleshlight_random(
         (210, 265),
         (215, 222),
         (130, 150),
+        (252, 133),
     ];
     let avatar_sizes = [
-        (300, 300),
         (675, 675),
         (920, 920),
         (770, 770),
@@ -142,17 +144,24 @@ fn fleshlight_random(
         (770, 770),
         (780, 780),
         (475, 475),
+        (300, 300),
     ];
 
     let frame = load_image(format!("fleshlight_random/{bg}.png"))?;
 
     let func = |images: Vec<Image>| {
-        let img = images[0].circle().resize_fit(avatar_sizes[bg], Fit::Cover);
+        let img = images[0].circle().resize_fit(avatar_sizes[idx], Fit::Cover);
         let mut surface = new_surface(frame.dimensions());
         let canvas = surface.canvas();
-        canvas.draw_image(&img, avatar_positions[bg], None);
-        canvas.draw_image(&frame, (0, 0), None);
-        let (x1, y1, x2, y2) = text_positions[bg];
+        if bg == 6 {
+            // 6.png 需要把用户图片放在最上层
+            canvas.draw_image(&frame, (0, 0), None);
+            canvas.draw_image(&img, avatar_positions[idx], None);
+        } else {
+            canvas.draw_image(&img, avatar_positions[idx], None);
+            canvas.draw_image(&frame, (0, 0), None);
+        }
+        let (x1, y1, x2, y2) = text_positions[idx];
         canvas.draw_text_area_auto_font_size(
             IRect::from_ltrb(x1, y1, x2, y2),
             &text,
@@ -161,7 +170,7 @@ fn fleshlight_random(
             text_params!(
                 font_families = &["FZShaoEr-M11S"],
                 text_align = TextAlign::Left,
-                paint = new_paint(text_colors[bg]),
+                paint = new_paint(text_colors[idx]),
             ),
         )?;
         Ok(surface.image_snapshot())
@@ -179,5 +188,5 @@ register_meme!(
     max_texts = 1,
     keywords = &["随机杯子"],
     date_created = local_date(2025, 9, 2),
-    date_modified = local_date(2025, 9, 2),
+    date_modified = local_date(2026, 10, 12),
 );

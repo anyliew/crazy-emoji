@@ -59,5 +59,5 @@ register_meme!(
 
     keywords = &["紫域精灵"],
     date_created = local_date(2025, 3, 24),
-    date_modified = local_date(2025, 3, 24),
+    date_modified = local_date(2026, 10, 12),
 );

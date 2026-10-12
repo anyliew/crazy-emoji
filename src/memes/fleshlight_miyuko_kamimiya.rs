@@ -59,5 +59,5 @@ register_meme!(
 
     keywords = &["神宫美优子"],
     date_created = local_date(2025, 3, 24),
-    date_modified = local_date(2025, 3, 24),
+    date_modified = local_date(2026, 10, 12),
 );

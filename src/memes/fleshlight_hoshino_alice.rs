@@ -60,5 +60,5 @@ register_meme!(
     max_texts = 0,
     keywords = &["啦啦队偶像", "拉拉队偶像"],
     date_created = local_date(2025, 3, 13),
-    date_modified = local_date(2025, 9, 5),
+    date_modified = local_date(2026, 10, 12),
 );

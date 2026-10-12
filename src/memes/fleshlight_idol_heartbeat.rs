@@ -59,5 +59,5 @@ register_meme!(
 
     keywords = &["偶像心跳"],
     date_created = local_date(2024, 12, 21),
-    date_modified = local_date(2025, 6, 13),
+    date_modified = local_date(2026, 10, 12),
 );
